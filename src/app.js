@@ -1,5 +1,8 @@
 import Vue from 'vue';
 import { typeIs } from './helpers';
+import * as components from './global';
+
+Object.entries(components).forEach((args) => Vue.component(...args));
 
 export function VueInit(render, selector, options) {
 	if (!document.querySelector(selector)) {
